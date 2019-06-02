@@ -7,11 +7,11 @@ import time
 
 
 try:
-    reddit = praw.Reddit(client_id=os.environ['client_id'],
-                        client_secret=os.environ['client_secret'],
-                        password=os.environ['password'],
-                        username=os.environ['username'],
-                        user_agent=os.environ['user_agent'])
+    reddit = praw.Reddit(client_id=os.environ['CLIENT_ID'],
+                        client_secret=os.environ['CLIENT_SECRET'],
+                        password=os.environ['REDDIT_PASS'],
+                        username=os.environ['REDDIT_USER'],
+                        user_agent=os.environ['USER_AGENT'])
 except:
     reddit = praw.Reddit('FlagBot')
 
@@ -50,14 +50,14 @@ def commentReply(body):
     
     reply = f'Flag of{":" * (len(hits) > 1)} {", ".join(hits)}' * bool(hits)
     if misses:
-        reply += f'\n\nCountr{"y" if len(misses) == 1 else "ies"} missed: {", ".join(misses)}. Go yell at {devname}'
+        reply += f'\n\nCountr{"y" if len(misses) == 1 else "ies"} missed: {", ".join(misses)}. Go yell at /u/TuttleStripes'
     reply += f'\n\n---\n\n^Send ^all ^requests ^and ^complaints ^to ^{devname}. ^Source ^code ^can ^be ^found ^[here](https://github.com/TuttleStripes/flagbot).'
     return reply
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  
     while True:
-        sub = reddit.subreddit('bottest')
+        sub = reddit.subreddit('vexillology')
         time.sleep(5)
         try:
             for comment in sub.stream.comments():
