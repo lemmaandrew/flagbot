@@ -31,7 +31,7 @@ def link(country, url=None):
 
 def commentReply(body):
     """This implies that the body definitely starts with '!flag'"""
-    devname = '[\/u\/TuttleStripes](https://www.reddit.com/user/TuttleStripes)'
+    devname = '[\/u\/doxx_me_gently](https://www.reddit.com/user/doxx_me_gently)'
     countries = re.split(r', ?', body[6:])
     hits = []
     misses = []
