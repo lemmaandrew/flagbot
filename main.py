@@ -51,7 +51,7 @@ def commentReply(body):
     reply = f'Flag of{":" * (len(hits) > 1)} {", ".join(hits)}' * bool(hits)
     if misses:
         reply += f'\n\nCountr{"y" if len(misses) == 1 else "ies"} missed: {", ".join(misses)}. Go yell at /u/TuttleStripes'
-    reply += f'\n\n---\n\n^Send ^all ^requests ^and ^complaints ^to ^{devname}. ^Source ^code ^can ^be ^found ^[here](https://github.com/TuttleStripes/flagbot).'
+    reply += f'\n\n---\n\n^I ^only ^reply ^to ^top ^level ^comments. ^Send ^all ^requests ^and ^complaints ^to ^{devname}. ^Source ^code ^can ^be ^found ^[here](https://github.com/TuttleStripes/flagbot).'
     return reply
 
 
